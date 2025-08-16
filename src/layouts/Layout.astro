@@ -1,0 +1,78 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import BetterIcon from '../components/ui/BetterIcon.astro'
+import DarkLightController from '../components/ui/DarkLightController.astro'
+import ThemeSelector from '../components/ui/ThemeSelector.astro'
+import Navbar from '../components/ui/Navbar.astro'
+import '../styles/profile.css';
+import Head from '../components/Head.astro'
+
+import { seo, profile, template } from '../settings'
+import Footer from '../components/ui/Footer.astro'
+
+type Props = {
+	title?: string
+	description?: string
+	image?: string
+}
+
+const {
+	title = seo.default_title,
+	description = seo.default_description,
+	image = seo.default_image,
+} = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+	<head>
+		{template.transitions && <ClientRouter /> }
+
+		<Head title={title} description={description} image={image} />
+		<!-- Modern font: Inter from Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+	</head>
+	<body data-theme="winter">
+		<div class={`bg-base-100 drawer lg:drawer-open ${template.menu_left ? 'drawer-end' : ''}`}>
+			<input id='my-drawer' type='checkbox' class='drawer-toggle' />
+			<!-- Drawer content -->
+            <div class='drawer-content bg-base-100'>
+				<!-- Top bar removed -->
+				<main class='p-8 pt-10 lg:pt-16 lg:max-w-5xl max-w-full mx-auto min-h-screen flex flex-col justify-between'>
+					<!-- Mobile nav button (sticky at top) -->
+					<div class="lg:hidden flex items-center sticky top-0 z-50" style="padding-top: 0; margin-top: 0; margin-left: 0.25rem;"> 
+						<button class="btn btn-square btn-ghost" aria-label="Open navigation menu" onclick="document.getElementById('my-drawer').checked = true;">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="size-6 stroke-current">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+							</svg>
+						</button>
+					</div>
+					<!-- Page content -->
+					<slot />
+				<Footer />
+				</main>
+			</div>
+			<!-- Drawer side -->
+			<div class='drawer-side z-40'>
+				<label for='my-drawer' aria-label='close sidebar' class='drawer-overlay'
+				></label>
+				<Navbar />
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--my-color: #252b30;
+		}
+	}
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	font-family: 'Nunito', system-ui, sans-serif;
+	}
+</style>

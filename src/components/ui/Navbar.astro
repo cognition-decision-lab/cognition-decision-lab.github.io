@@ -1,0 +1,117 @@
+---
+import { Image } from 'astro:assets'
+import {profile} from '../../settings'
+import SocialIcons from './SocialIcons.astro'
+import ProfilePictures from '@/assets/profile_pictures.jpg'
+import { getCollection } from 'astro:content'
+import { template } from '@/settings'
+
+const isBlogPopulated = await getCollection('blog').then(collection => collection.length > 0)
+
+const {fullName, title} = profile
+---
+<aside
+  class='pl-8 pr-8 pt-8 pb-8 h-screen w-[20rem] bg-[#53607a] text-base-200 flex flex-col rounded-2xl shadow-lg'
+>
+	<div class='flex flex-col my-8 justify-between h-full'>
+    <div>
+      <div class='mx-4 mt-8'>
+  <ul class='space-y-4 menu grow shrink menu-md overflow-y-auto rounded-xl'>
+          <li>
+            <a href={`/`} class='text-lg'>
+              <i class="fa-solid fa-house mr-2"></i>Home
+            </a>
+          </li>
+          <li>
+            <a href={`/people`} class='text-lg'>
+              <i class="fa-solid fa-users mr-2"></i>People
+            </a>
+          </li>
+          <li>
+            <a href={`/projects`} class='text-lg'>
+              <i class="fa-solid fa-diagram-project mr-2"></i>Projects
+            </a>
+          </li>
+          <li class="menu-dropdown">
+            <details>
+              <summary class="text-lg cursor-pointer flex items-center">
+                <i class="fa-solid fa-file-lines mr-4"></i>
+                <span>Papers</span>
+              </summary>
+              <ul class="ml-4">
+                <li><a href={`/papers#economic-decision-making`} class="text-base"><i class="fa-solid fa-eye mr-2"></i>Economic Decision Making with Limited Attention</a></li>
+                <li><a href={`/papers#bounded-rationality`} class="text-base"><i class="fa-solid fa-chart-line mr-2"></i>Bounded Rationality in Macroeconomics</a></li>
+                <li><a href={`/papers#behavioral-economic-links`} class="text-base"><i class="fa-solid fa-puzzle-piece mr-2"></i>Links Between Behavioral and Economic Phenomena</a></li>
+                <li><a href={`/papers#neuroeconomics`} class="text-base"><i class="fa-solid fa-brain mr-2"></i>Neuroeconomics</a></li>
+                <li><a href={`/papers#other`} class="text-base"><i class="fa-solid fa-ellipsis mr-2"></i>Other</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href={`/links`} class='text-lg'>
+              <i class="fa-solid fa-link mr-2"></i>Links
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-8 mx-4">
+  
+      </div>
+		</div>
+	</div>
+</aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="/papers#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        const href = link.getAttribute('href');
+        const anchor = href.split('#')[1];
+        if (window.location.pathname.startsWith('/papers')) {
+          e.preventDefault();
+          const el = document.getElementById(anchor);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+            history.replaceState(null, '', href);
+            el.classList.add('highlight-section');
+            setTimeout(() => {
+              el.classList.remove('highlight-section');
+            }, 1200);
+          }
+        } else {
+          // Always navigate to the anchor, even from other pages
+          window.location.href = href;
+        }
+      });
+    });
+  });
+
+  // Highlight section after page load if anchor is present
+  window.addEventListener('DOMContentLoaded', function () {
+    const anchor = window.location.hash.replace('#', '');
+    if (anchor) {
+      const el = document.getElementById(anchor);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        el.classList.add('highlight-section');
+        setTimeout(() => {
+          el.classList.remove('highlight-section');
+        }, 1200);
+      }
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<style>
+    .columbia-logo-menu {
+      /* Use the same color as text-base-content for the logo */
+      filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(1);
+      /* Set the logo color using mix-blend-mode and currentColor */
+      mix-blend-mode: multiply;
+      color: var(--tw-text-base-content, #1f2937);
+    }
+  .highlight-section {
+    box-shadow: 0 0 0 4px #2563eb;
+    transition: box-shadow 0.3s;
+  }
+</style>

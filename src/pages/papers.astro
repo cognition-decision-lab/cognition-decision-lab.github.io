@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro'
+import papers from '../data/papers.json'
+---
+<Layout>
+  <style>
+    section p, section li {
+      text-align: justify;
+      word-break: break-word;
+      hyphens: auto;
+    }
+  </style>
+  {['economic-decision-making', 'bounded-rationality', 'behavioral-economic-links', 'neuroeconomics', 'other'].map(section => (
+    <section class="py-12" id={section}>
+      <h1 class="text-4xl font-bold mb-8">
+        {section === 'economic-decision-making' && 'Economic Decision Making with Limited Attention'}
+        {section === 'bounded-rationality' && 'Bounded Rationality in Macroeconomics'}
+        {section === 'behavioral-economic-links' && 'Links Between Behavioral and Economic Phenomena'}
+        {section === 'neuroeconomics' && 'Neuroeconomics'}
+        {section === 'other' && 'Other'}
+      </h1>
+      <div class="space-y-8">
+        <h2 class="text-2xl font-bold mb-4">Published Papers</h2>
+        <ul class="list-disc ml-8 space-y-2">
+          {papers.filter(p => p.section === section && p.type === 'published').map(paper => (
+            <li>
+              <span class="text-blue-600">
+                {paper.url ? (
+                  <a href={paper.url} target="_blank" rel="noopener noreferrer" class="hover:underline">"{paper.title}"</a>
+                ) : (
+                  `"${paper.title}"`
+                )}
+              </span>, {paper.authors.join(', ')}{paper.journal ? `, ${paper.journal}` : ''}{paper.volume ? `, Volume ${paper.volume}` : ''}{paper.issue ? `, Issue ${paper.issue}` : ''}{paper.pages ? `, Pages ${paper.pages}` : ''}{paper.date ? `, ${paper.date}` : ''}
+            </li>
+          ))}
+        </ul>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Working Papers</h2>
+        <ul class="list-disc ml-8 space-y-2">
+          {papers.filter(p => p.section === section && p.type === 'working').map(paper => (
+            <li>
+              <span class="text-blue-600">
+                {paper.url ? (
+                  <a href={paper.url} target="_blank" rel="noopener noreferrer" class="hover:underline">"{paper.title}"</a>
+                ) : (
+                  `"${paper.title}"`
+                )}
+              </span>, {paper.authors.join(', ')}{paper.date ? `, ${paper.date}` : ''}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  ))}
+</Layout>

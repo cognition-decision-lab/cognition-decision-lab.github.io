@@ -1,0 +1,114 @@
+{
+  "faculty": [
+    {
+      "name": "Michael Woodford",
+      "image": "/faculty/michael_woodford.jpg",
+      "title": "John Bates Clark Professor of Political Economy, Columbia University",
+      "areas": "Endogenous Allocation of Attention, Dynamic Models of Evidence Accumulation and Choice, Statistical Inference as a Source of Behavioral Biases",
+      "website": "https://blogs.cuit.columbia.edu/mw2230/",
+      "email": "michael.woodford@columbia.edu"
+    },
+    {
+      "name": "Mark Dean",
+      "image": "/faculty/mark_dean.jpg",
+      "title": "Associate Professor of Economics, Columbia University",
+      "areas": "Neuroscience and Economics, Microeconomic Theory, Behavioral Economics, Experimental",
+      "website": "http://www.columbia.edu/~md3405/",
+      "email": "mark.dean@columbia.edu"
+    },
+    {
+      "name": "Hassan Afrouzi",
+      "image": "/faculty/hassan_afrouzi.jpg",
+      "title": "Assistant Professor of Economics, Columbia University",
+      "areas": "Expectation Formation, Endogenous Allocation of Attention, and the Macroeconomic Implications of Imperfect Information",
+      "website": "http://afrouzi.com/",
+      "email": "ha2475@columbia.edu"
+    }
+  ],
+  "researchers": [
+    {
+      "name": "Giulia Mezzadri",
+      "image": "/researchers/giulia_mezzadri.jpg",
+      "title": "Post Doctoral Research Scholar",
+      "website": "http://www.giuliamezzadri.com/",
+      "linkedin": "https://www.linkedin.com/in/giulia-mezzadri/",
+      "email": "gm3026@columbia.edu"
+    }
+  ],
+  "students": [
+    {
+      "name": "Patricio Martin Goldstein",
+      "image": "/students/patricio_goldstein.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "pmg2146@columbia.edu"
+    },
+    {
+      "name": "Zhi Hao Lim",
+      "image": "/students/zhi_hao_lim.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "zl2969@columbia.edu"
+    },
+    {
+      "name": "Tianling Luo",
+      "image": "/students/tianling_luo.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "tl3078@columbia.edu"
+    },
+    {
+      "name": "Ricardo Pommer",
+      "image": "/students/ricardo_pommer.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "rap2194@columbia.edu"
+    },
+    {
+      "name": "Shuhua Si",
+      "image": "/students/shuhua_si.jpg",
+      "title": "PhD candidate, Economics",
+      "email": "ss5580@columbia.edu"
+    },
+    {
+      "name": "Hanyao Zhang",
+      "image": "/students/hanyao_zhang.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "hanyao.zhang@columbia.edu"
+    }
+  ],
+  "alumni": {
+    "postdocs": [
+      "Arthur Prat-Carrabin – Post Doctoral Fellow at Harvard University",
+      "Brandon Ashinoff – Data Scientist at Tetricus Labs",
+      "Mel Win Khaw – Post Doctoral Fellow at Duke University"
+    ],
+    "phds": [
+      "Lucas de Lara – 2025 Ph.D. in Economics. Placement: Assistant Professor, SUNY Binghamton",
+      "Edward Peter Shore – 2024 Ph.D. in Economics. Placement: Assistant Professor, University of New South Wales",
+      "Susannah Scanlan – 2024 Ph.D. in Economics. Placement: Capital Fund Management",
+      "Shin Oblander – 2024 Ph.D. in Marketing. Placement: Assistant Professor, University of British Columbia",
+      "Yeji Sung – 2023 Ph.D. in Economics. Placement: Federal Reserve Bank of San Francisco",
+      "Bruno de Albuquerque Furtado – 2023 Ph.D. in Economics. Placement: Postdoctoral Research Assistant, Royal Holloway University of London",
+      "Guy Aridor – 2022 Ph.D. in Economics. Placement: Kellogg School of Management",
+      "Silvio Ravaioli – 2022 Ph.D. in Economics. Placement: Cornerstone Research",
+      "Teresa Esteban-Casanelles – 2021 Ph.D. in Economics. Placement: J-Pal Governance Initiative in 2021/King's College starting in 2022",
+      "Duarte Goncalves – 2021 Ph.D. in Economics. Placement: University College London",
+      "Dilip Ravindran – 2021 Ph.D. in Economics. Placement: Postdoctoral Researcher at Berlin School of Economics",
+      "Evan Friedman – 2020 Ph.D. in Economics. Placement: University of Essex",
+      "Han Huynh – 2020 Ph.D. in Economics. Placement: Bates White",
+      "RC Lim – 2020 Ph.D. in Economics. Placement: Antai, Shanghai Jiao Tong University",
+      "Oskar Zorrilla – 2019 Ph.D. in Economics. Placement: United States Naval Academy",
+      "Nate Neligh – 2018 Ph.D. in Economics. Placement: Post Doctoral Fellow at Chapman University (now University of Tennessee)",
+      "Ambuj Dewan – 2017 Ph.D. in Economics. Placement: Post Doctoral Fellow at University of Southern California",
+      "Valentin Somma – 2017 Ph.D. in Economics. Placement: Boston Consulting Group",
+      "Pablo Egana del Sol – 2016 Ph.D. in Sustainable Development. Placement: Post Doctoral Fellow at MIT"
+    ],
+    "undergrads": [
+      "Fahad Algifari – School of General Studies 2023. Placement: Pre-Doctoral program at the University of Pennsylvania",
+      "Sarah Wang – Columbia College 2024. Placement: Pre-Doctoral program at the Federal Reserve Bank of New York",
+      "Justinas Grigaitis – School of General Studies 2019. Placement: NERA Economic Consulting",
+      "Ziang Li – Visiting Student 2016-2017; Pre-doctoral Researcher 2017-2018. Placement: Ph.D. program at Princeton University",
+      "Shambhavi Tiwari – Columbia College 2018. Placement: Pre-Doctoral program at Stanford University",
+      "Luis Sanchez – Columbia College 2017. Placement: Ph.D. program at Cornell University",
+      "Adriano Fernandes – Columbia College 2016. Placement: Ph.D. program at Harvard University",
+      "Omeed Maghzian – Columbia College 2016. Placement: Ph.D. program at Harvard University"
+    ]
+  }
+}
