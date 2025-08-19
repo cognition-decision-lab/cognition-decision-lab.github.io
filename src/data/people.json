@@ -19,7 +19,7 @@
     {
       "name": "Hassan Afrouzi",
       "image": "/faculty/hassan_afrouzi.jpg",
-      "title": "Assistant Professor of Economics, Columbia University",
+      "title": "Associate Professor of Economics (without tenure), Columbia University",
       "areas": "Expectation Formation, Endogenous Allocation of Attention, and the Macroeconomic Implications of Imperfect Information",
       "website": "http://afrouzi.com/",
       "email": "ha2475@columbia.edu"
@@ -33,6 +33,12 @@
       "website": "http://www.giuliamezzadri.com/",
       "linkedin": "https://www.linkedin.com/in/giulia-mezzadri/",
       "email": "gm3026@columbia.edu"
+    },
+    {
+      "name": "Jiang Mao",
+      "image": "/researchers/jiang_mao.jpg",
+      "title": "Post Doctoral Research Scholar",
+      "email": "jm6136@columbia.edu"
     }
   ],
   "students": [
