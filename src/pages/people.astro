@@ -1,6 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import people from '../data/people.json'
+
+const toOptimized = (path: string) => {
+  const dot = path.lastIndexOf('.')
+  if (dot === -1) return { avif: path, webp: path, jpg: path }
+  const base = path.slice(0, dot)
+  return {
+    avif: `${base}-400.avif`,
+    webp: `${base}-400.webp`,
+    jpg: `${base}-400.jpg`,
+  }
+}
 ---
 <Layout>
   <section class="py-12">
@@ -11,7 +22,13 @@ import people from '../data/people.json'
       <div class="grid md:grid-cols-3 gap-8">
         {people.faculty.map(faculty => (
           <div class="flex flex-col" key={faculty.name}>
-            <img src={faculty.image} alt={faculty.name} class="profile-square mb-4 mx-auto" />
+            {(() => { const opt = toOptimized(faculty.image); return (
+              <picture class="mb-4 mx-auto">
+                <source srcset={opt.avif} type="image/avif" />
+                <source srcset={opt.webp} type="image/webp" />
+                <img src={faculty.image} alt={faculty.name} class="profile-square" loading="lazy" decoding="async" width="160" height="160" />
+              </picture>
+            ); })()}
             <h3 class="text-xl font-semibold text-center">{faculty.name}</h3>
             <p>{faculty.title}</p>
             <p class="text-sm mt-2" style="text-align: justify; word-break: break-word; hyphens: auto;">Areas of Interest: {faculty.areas}</p>
@@ -27,7 +44,13 @@ import people from '../data/people.json'
       <div class="grid md:grid-cols-3 gap-8">
         {people.researchers.map(researcher => (
           <div class="flex flex-col" key={researcher.name}>
-            <img src={researcher.image} alt={researcher.name} class="profile-square mb-4" />
+            {(() => { const opt = toOptimized(researcher.image); return (
+              <picture class="mb-4">
+                <source srcset={opt.avif} type="image/avif" />
+                <source srcset={opt.webp} type="image/webp" />
+                <img src={researcher.image} alt={researcher.name} class="profile-square" loading="lazy" decoding="async" width="160" height="160" />
+              </picture>
+            ); })()}
             <h3 class="text-lg font-semibold">{researcher.name}</h3>
             <p>{researcher.title}</p>
             <div class="mt-2 flex flex-col gap-1">
@@ -43,7 +66,13 @@ import people from '../data/people.json'
       <div class="grid md:grid-cols-3 gap-8">
         {people.students.map(student => (
           <div class="flex flex-col" key={student.name}>
-            <img src={student.image} alt={student.name} class="profile-square mb-4" />
+            {(() => { const opt = toOptimized(student.image); return (
+              <picture class="mb-4">
+                <source srcset={opt.avif} type="image/avif" />
+                <source srcset={opt.webp} type="image/webp" />
+                <img src={student.image} alt={student.name} class="profile-square" loading="lazy" decoding="async" width="160" height="160" />
+              </picture>
+            ); })()}
             <h3 class="text-lg font-semibold">{student.name}</h3>
             <p>{student.title}</p>
             <a href={`mailto:${student.email}`} class="text-blue-600 underline mt-2">{student.email}</a>
