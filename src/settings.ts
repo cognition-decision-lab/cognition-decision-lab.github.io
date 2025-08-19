@@ -14,7 +14,7 @@ export const profile = {
 export const social = {
 	email: '',
 	linkedin: '',
-	x: 'https://www.x.com/',
+	x: '',
 	github: '',
 	gitlab: '',
 	scholar: '',
@@ -36,5 +36,5 @@ export const template = {
 export const seo = {
 	default_title: 'Cognition and Decision Lab',
 	default_description: 'Cognition and Decision Lab is a research group focused on economic decision making.',
-	default_image: '/images/astro-academia.png',
+	default_image: '/cognition-decision-lab-logo.png',
 }

@@ -1,5 +1,4 @@
 ---
-import {template} from '@/settings'
 interface Props {
 	title: string
 	description: string
@@ -13,11 +12,9 @@ const { title, description, image } = Astro.props
 
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
-<link
-  rel='icon'
-  type='image/png'
-  href='/favicon-crown.png'
-/>
+<link rel='icon' href='/favicon-crown.png' type='image/png' sizes='32x32' />
+<link rel='icon' href='/favicon.ico' />
+<link rel='apple-touch-icon' href='/apple-touch-icon.png' />
 <meta name='generator' content={Astro.generator} />
 
 <!-- Sitemap -->
@@ -36,14 +33,14 @@ const { title, description, image } = Astro.props
 <meta property='og:url' content={Astro.url} />
 <meta property='og:title' content={title} />
 <meta property='og:description' content={description} />
-<meta property='og:image' content={new URL(image.startsWith('/') ? `/candd${image}` : image, Astro.url)} />
+<meta property='og:image' content={new URL(image.startsWith('/') ? `/${image}` : image, Astro.url)} />
 
 <!-- Twitter -->
 <meta property='twitter:card' content='summary_large_image' />
 <meta property='twitter:url' content={Astro.url} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
-<meta property='twitter:image' content={new URL(image.startsWith('/') ? `/candd${image}` : image, Astro.url)} />
+<meta property='twitter:image' content={new URL(image.startsWith('/') ? `/${image}` : image, Astro.url)} />
 
 <!-- Theme selector scripts -->
 <script is:inline>
