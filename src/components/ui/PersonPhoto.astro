@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  path: string
+  alt: string
+  className?: string
+  wrapperClass?: string
+  widths?: number[]
+  sizes?: string
+}
+
+const {
+  path,
+  alt,
+  className = 'profile-square',
+  wrapperClass = '',
+  widths = [160, 320],
+  sizes = '160px',
+} = Astro.props as Props
+
+const imgMap = import.meta.glob('/src/assets/**/*.{jpg,jpeg,png}', { eager: true }) as Record<string, { default: any }>
+const mod = imgMap['/src/assets' + path]?.default
+if (!mod) {
+  throw new Error(`PersonPhoto: image not found in src/assets for path: ${path}`)
+}
+---
+<div class={wrapperClass}>
+  <Image
+    src={mod}
+    alt={alt}
+    class={className}
+    widths={widths}
+    sizes={sizes}
+    formats={["avif", "webp", "jpeg"]}
+    loading="lazy"
+    decoding="async"
+  />
+</div>

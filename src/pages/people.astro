@@ -1,17 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import people from '../data/people.json'
+import PersonPhoto from '../components/ui/PersonPhoto.astro'
 
-const toOptimized = (path: string) => {
-  const dot = path.lastIndexOf('.')
-  if (dot === -1) return { avif: path, webp: path, jpg: path }
-  const base = path.slice(0, dot)
-  return {
-    avif: `${base}-400.avif`,
-    webp: `${base}-400.webp`,
-    jpg: `${base}-400.jpg`,
-  }
+// Build-time guard: ensure all images referenced in JSON exist under src/assets
+const imgMap = import.meta.glob('/src/assets/**/*.{jpg,jpeg,png}', { eager: true }) as Record<string, { default: any }>
+const toImg = (p: string) => imgMap['/src/assets' + p]?.default
+const missing: string[] = []
+for (const p of [
+  ...people.faculty.map((x) => x.image),
+  ...people.researchers.map((x) => x.image),
+  ...people.students.map((x) => x.image),
+]) {
+  if (!toImg(p)) missing.push(p)
 }
+  if (missing.length) {
+    throw new Error(`Missing assets for people images: ${missing.join(', ')}`)
+  }
 ---
 <Layout>
   <section class="py-12">
@@ -22,13 +27,7 @@ const toOptimized = (path: string) => {
       <div class="grid md:grid-cols-3 gap-8">
         {people.faculty.map(faculty => (
           <div class="flex flex-col" key={faculty.name}>
-            {(() => { const opt = toOptimized(faculty.image); return (
-              <picture class="mb-4 mx-auto">
-                <source srcset={opt.avif} type="image/avif" />
-                <source srcset={opt.webp} type="image/webp" />
-                <img src={faculty.image} alt={faculty.name} class="profile-square" loading="lazy" decoding="async" width="160" height="160" />
-              </picture>
-            ); })()}
+            <PersonPhoto path={faculty.image} alt={faculty.name} wrapperClass="mb-4 mx-auto" />
             <h3 class="text-xl font-semibold text-center">{faculty.name}</h3>
             <p>{faculty.title}</p>
             <p class="text-sm mt-2" style="text-align: justify; word-break: break-word; hyphens: auto;">Areas of Interest: {faculty.areas}</p>
@@ -44,13 +43,7 @@ const toOptimized = (path: string) => {
       <div class="grid md:grid-cols-3 gap-8">
         {people.researchers.map(researcher => (
           <div class="flex flex-col" key={researcher.name}>
-            {(() => { const opt = toOptimized(researcher.image); return (
-              <picture class="mb-4">
-                <source srcset={opt.avif} type="image/avif" />
-                <source srcset={opt.webp} type="image/webp" />
-                <img src={researcher.image} alt={researcher.name} class="profile-square" loading="lazy" decoding="async" width="160" height="160" />
-              </picture>
-            ); })()}
+            <PersonPhoto path={researcher.image} alt={researcher.name} wrapperClass="mb-4" />
             <h3 class="text-lg font-semibold">{researcher.name}</h3>
             <p>{researcher.title}</p>
             <div class="mt-2 flex flex-col gap-1">
@@ -66,13 +59,7 @@ const toOptimized = (path: string) => {
       <div class="grid md:grid-cols-3 gap-8">
         {people.students.map(student => (
           <div class="flex flex-col" key={student.name}>
-            {(() => { const opt = toOptimized(student.image); return (
-              <picture class="mb-4">
-                <source srcset={opt.avif} type="image/avif" />
-                <source srcset={opt.webp} type="image/webp" />
-                <img src={student.image} alt={student.name} class="profile-square" loading="lazy" decoding="async" width="160" height="160" />
-              </picture>
-            ); })()}
+            <PersonPhoto path={student.image} alt={student.name} wrapperClass="mb-4" />
             <h3 class="text-lg font-semibold">{student.name}</h3>
             <p>{student.title}</p>
             <a href={`mailto:${student.email}`} class="text-blue-600 underline mt-2">{student.email}</a>

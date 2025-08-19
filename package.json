@@ -8,8 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "astro build && npx gh-pages -d dist",
-  "gen:icons": "node scripts/generate-icons.mjs",
-  "opt:people": "node ./scripts/optimize-people-images.mjs"
+  "gen:icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.1.4",
