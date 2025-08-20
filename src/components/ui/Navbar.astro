@@ -76,13 +76,13 @@ const {fullName, title} = profile
             const href = link.getAttribute('href') || '';
             const anchor = href.split('#')[1] || '';
             const inPapers = window.location.pathname.startsWith('/papers');
+            e.preventDefault();
             if (inPapers) {
-              e.preventDefault();
               scrollAndOpen(anchor);
               try { history.replaceState(null, '', href); } catch {}
             } else {
-              // Navigate normally; on destination page, on-load handler will scroll
-              // Do not preventDefault here
+              // Force navigation; on arrival, on-load handlers will scroll and reopen submenu
+              location.href = href;
             }
           },
           { passive: false }
