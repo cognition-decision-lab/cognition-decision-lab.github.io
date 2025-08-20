@@ -55,44 +55,61 @@ const {fullName, title} = profile
 </aside>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[href^="/papers#"]').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        const href = link.getAttribute('href');
-        const anchor = href.split('#')[1];
-        if (window.location.pathname.startsWith('/papers')) {
-          e.preventDefault();
-          const el = document.getElementById(anchor);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-            history.replaceState(null, '', href);
-            el.classList.add('highlight-section');
-            setTimeout(() => {
-              el.classList.remove('highlight-section');
-            }, 1200);
-          }
-        } else {
-          // Always navigate to the anchor, even from other pages
-          window.location.href = href;
-        }
-      });
-    });
-  });
-
-  // Highlight section after page load if anchor is present
-  window.addEventListener('DOMContentLoaded', function () {
-    const anchor = window.location.hash.replace('#', '');
-    if (anchor) {
+  (function () {
+    const scrollAndOpen = (anchor) => {
       const el = document.getElementById(anchor);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        el.classList.add('highlight-section');
-        setTimeout(() => {
-          el.classList.remove('highlight-section');
-        }, 1200);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth' });
+      el.classList.add('highlight-section');
+      setTimeout(() => el.classList.remove('highlight-section'), 1200);
+      const active = document.querySelector(`a[href="/papers#${CSS.escape(anchor)}"]`);
+      const details = active ? active.closest('details') : null;
+      if (details) details.open = true;
+    };
+
+    const init = () => {
+      const links = document.querySelectorAll('a[href^="/papers#"]');
+      links.forEach((link) => {
+        link.addEventListener(
+          'click',
+          (e) => {
+            const href = link.getAttribute('href') || '';
+            const anchor = href.split('#')[1] || '';
+            const inPapers = window.location.pathname.startsWith('/papers');
+            if (inPapers) {
+              e.preventDefault();
+              scrollAndOpen(anchor);
+              try { history.replaceState(null, '', href); } catch {}
+            } else {
+              // Navigate normally; on destination page, on-load handler will scroll
+              // Do not preventDefault here
+            }
+          },
+          { passive: false }
+        );
+      });
+
+      // If landing on /papers with a hash, scroll and keep submenu open
+      const anchor = window.location.hash ? window.location.hash.slice(1) : '';
+      if (anchor && window.location.pathname.startsWith('/papers')) {
+        requestAnimationFrame(() => scrollAndOpen(anchor));
       }
-    }
-  });
+    };
+
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init, { once: true });
+
+    // Handle Astro client-side navigations as well
+    const onAstroLoad = () => {
+      const anchor = window.location.hash ? window.location.hash.slice(1) : '';
+      if (anchor && window.location.pathname.startsWith('/papers')) {
+        requestAnimationFrame(() => scrollAndOpen(anchor));
+      }
+    };
+
+    document.addEventListener('astro:page-load', onAstroLoad);
+    document.addEventListener('astro:after-swap', onAstroLoad);
+  })();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <style>
