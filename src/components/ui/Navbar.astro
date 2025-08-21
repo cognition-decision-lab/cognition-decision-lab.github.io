@@ -56,6 +56,22 @@ const {fullName, title} = profile
 
 <script>
   (function () {
+  // NOTE [anchor-scroll + ClientRouter]:
+  // Astro's ClientRouter attaches click handlers that can reset scroll position
+  // on navigation. For in-page anchors within /papers, that can result in jumps
+  // to the top before our smooth scroll runs. We work around this by:
+  // 1) Intercepting submenu anchor interactions early (pointerdown + capture-phase click)
+  //    and calling preventDefault + stopImmediatePropagation to preempt the router.
+  // 2) Performing our own smooth scrolling and updating the URL hash with history.replaceState.
+  // 3) On cross-page navigations into /papers, we persist the target in sessionStorage and,
+  //    on arrival, run a short retry loop to outlast any router scroll-to-top behavior.
+  //
+  // Future hardening (if sporadic top jumps return): after calling scrollIntoView, measure
+  // the target's bounding rect (getBoundingClientRect). If the element's top isn't within
+  // a small threshold from the expected position (e.g., |top - 0| > 4px when using block:'start'),
+  // trigger another scroll attempt and/or extend the retry window. As a last resort, perform
+  // a one-time hard navigation to /papers#<anchor> for that click.
+
     const scrollAndOpen = (anchor) => {
       const el = document.getElementById(anchor);
       if (!el) return;
@@ -85,7 +101,7 @@ const {fullName, title} = profile
           return { ok: true, anchor, href, a };
         };
 
-        // Early interception to prevent ClientRouter from kicking in
+  // Early interception to prevent ClientRouter from kicking in
         const preempt = (e) => {
           const res = shouldHandle(e);
           if (!res.ok) return;
@@ -119,7 +135,7 @@ const {fullName, title} = profile
             setTimeout(() => a.remove(), 0);
           }
         };
-        // Capture-phase to run before ClientRouter handlers
+  // Capture-phase to run before ClientRouter handlers
         document.addEventListener('pointerdown', preempt, { passive: false, capture: true });
         document.addEventListener('click', handler, { passive: false, capture: true });
         document.__cdlPapersDelegateBound = true;
@@ -139,6 +155,7 @@ const {fullName, title} = profile
         }
         if (anchor) {
           // Retry a few times to outlast any router scroll-to-top
+          // Consider verifying with getBoundingClientRect if flakes are observed.
           let attempts = 0;
           const max = 12; // ~600ms with 50ms steps
           const tryScroll = () => {
