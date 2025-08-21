@@ -59,7 +59,7 @@ const {fullName, title} = profile
     const scrollAndOpen = (anchor) => {
       const el = document.getElementById(anchor);
       if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth' });
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       el.classList.add('highlight-section');
       setTimeout(() => el.classList.remove('highlight-section'), 1200);
       const active = document.querySelector(`a[href="/papers#${CSS.escape(anchor)}"]`);
@@ -113,7 +113,16 @@ const {fullName, title} = profile
           } catch {}
         }
         if (anchor) {
-          requestAnimationFrame(() => requestAnimationFrame(() => scrollAndOpen(anchor)));
+          // Retry a few times to outlast any router scroll-to-top
+          let attempts = 0;
+          const max = 6;
+          const tryScroll = () => {
+            attempts++;
+            scrollAndOpen(anchor);
+            if (attempts < max) setTimeout(tryScroll, 50);
+          };
+          // Allow layout to settle then start retries
+          requestAnimationFrame(() => setTimeout(tryScroll, 0));
         }
       }
     };
