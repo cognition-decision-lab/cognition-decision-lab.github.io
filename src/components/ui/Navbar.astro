@@ -1,47 +1,57 @@
 ---
 import {profile} from '../../settings'
 
-const {fullName, title} = profile
+const {fullName, title, institute} = profile
 ---
 <aside
   class='pl-8 pr-8 pt-8 pb-8 h-screen w-[22rem] bg-gradient-to-b from-[#56627a] to-[#46526c] text-base-200 flex flex-col rounded-2xl shadow-xl ring-1 ring-white/10'
 >
-	<div class='flex flex-col my-8 justify-between h-full'>
+	<div class='flex flex-col my-4 justify-between h-full'>
     <div>
-      <div class='mx-4 mt-8'>
-  <ul class='space-y-4 menu grow shrink menu-md overflow-y-auto rounded-xl'>
+      <div class='mx-4'>
+        <div class="mb-4 select-none">
+          <a href="/" class="flex items-center gap-2">
+            <span aria-hidden="true" class="logo-mask h-8 w-8"></span>
+            <div class="leading-tight min-w-0">
+              <div class="font-semibold tracking-wide truncate whitespace-nowrap">{fullName}</div>
+              <div class="text-sm opacity-80 whitespace-nowrap">Columbia University | Economics</div>
+            </div>
+          </a>
+        </div>
+        <div class="h-px bg-white/10 mb-4"></div>
+  <ul class='space-y-3 menu grow shrink menu-md overflow-y-auto rounded-xl pr-1'>
           <li>
-            <a href={`/`} class='text-lg'>
+            <a href={`/`} data-path="/" class="nav-link text-base">
               <i class="fa-solid fa-house mr-2"></i>Home
             </a>
           </li>
           <li>
-            <a href={`/people`} class='text-lg'>
+            <a href={`/people`} data-path="/people" class="nav-link text-base">
               <i class="fa-solid fa-users mr-2"></i>People
             </a>
           </li>
           <li>
-            <a href={`/projects`} class='text-lg'>
+            <a href={`/projects`} data-path="/projects" class="nav-link text-base">
               <i class="fa-solid fa-diagram-project mr-2"></i>Projects
             </a>
           </li>
           <li class="menu-dropdown">
             <details>
-              <summary class="text-lg cursor-pointer flex items-center">
-                <i class="fa-solid fa-file-lines mr-4"></i>
+              <summary data-path="/papers" class="text-base cursor-pointer flex items-center select-none nav-link">
+                <i class="fa-solid fa-file-lines mr-3"></i>
                 <span>Papers</span>
               </summary>
-              <ul class="ml-4">
-                <li><a href={`/papers#economic-decision-making`} class="text-base"><i class="fa-solid fa-eye mr-2"></i>Economic Decision Making with Limited Attention</a></li>
-                <li><a href={`/papers#bounded-rationality`} class="text-base"><i class="fa-solid fa-chart-line mr-2"></i>Bounded Rationality in Macroeconomics</a></li>
-                <li><a href={`/papers#behavioral-economic-links`} class="text-base"><i class="fa-solid fa-puzzle-piece mr-2"></i>Links Between Behavioral and Economic Phenomena</a></li>
-                <li><a href={`/papers#neuroeconomics`} class="text-base"><i class="fa-solid fa-brain mr-2"></i>Neuroeconomics</a></li>
-                <li><a href={`/papers#other`} class="text-base"><i class="fa-solid fa-ellipsis mr-2"></i>Other</a></li>
+              <ul class="ml-4 space-y-1">
+                <li><a href={`/papers#economic-decision-making`} class="sub-link text-[0.95rem]"><i class="fa-solid fa-eye mr-2 opacity-80"></i>Economic Decision Making with Limited Attention</a></li>
+                <li><a href={`/papers#bounded-rationality`} class="sub-link text-[0.95rem]"><i class="fa-solid fa-chart-line mr-2 opacity-80"></i>Bounded Rationality in Macroeconomics</a></li>
+                <li><a href={`/papers#behavioral-economic-links`} class="sub-link text-[0.95rem]"><i class="fa-solid fa-puzzle-piece mr-2 opacity-80"></i>Links Between Behavioral and Economic Phenomena</a></li>
+                <li><a href={`/papers#neuroeconomics`} class="sub-link text-[0.95rem]"><i class="fa-solid fa-brain mr-2 opacity-80"></i>Neuroeconomics</a></li>
+                <li><a href={`/papers#other`} class="sub-link text-[0.95rem]"><i class="fa-solid fa-ellipsis mr-2 opacity-80"></i>Other</a></li>
               </ul>
             </details>
           </li>
           <li>
-            <a href={`/links`} class='text-lg'>
+            <a href={`/links`} data-path="/links" class="nav-link text-base">
               <i class="fa-solid fa-link mr-2"></i>Links
             </a>
           </li>
@@ -56,6 +66,26 @@ const {fullName, title} = profile
 
 <script>
   (function () {
+    function setActive() {
+      const path = window.location.pathname.replace(/\/$/, '') || '/';
+      const items = Array.from(document.querySelectorAll('.nav-link[data-path]'));
+      items.forEach((el) => el.classList.remove('active'));
+      const best = items.find((el) => {
+        const p = el.getAttribute('data-path') || '';
+        if (p === '/papers') return path.startsWith('/papers');
+        return p === path;
+      });
+      if (best) best.classList.add('active');
+
+      // Handle submenu active state by hash on /papers
+      const hash = window.location.hash.replace('#', '');
+      const subs = Array.from(document.querySelectorAll('a.sub-link'));
+      subs.forEach((el) => el.classList.remove('active'));
+      if (path.startsWith('/papers') && hash) {
+        const match = document.querySelector(`a.sub-link[href="/papers#${CSS.escape(hash)}"]`);
+        if (match) match.classList.add('active');
+      }
+    }
   // NOTE [anchor-scroll + ClientRouter]:
   // Astro's ClientRouter attaches click handlers that can reset scroll position
   // on navigation. For in-page anchors within /papers, that can result in jumps
@@ -124,6 +154,7 @@ const {fullName, title} = profile
           if (inPapers) {
             scrollAndOpen(anchor);
             try { history.replaceState(null, '', href); } catch {}
+            try { setActive(); } catch {}
           } else {
             // Client-side navigate to /papers, then scroll on arrival
             try { sessionStorage.setItem('cdl-papers-anchor', anchor); } catch {}
@@ -175,23 +206,49 @@ const {fullName, title} = profile
     // Handle Astro client-side navigations as well
     const onAstroLoad = () => {
       init();
+      setActive();
     };
 
     document.addEventListener('astro:page-load', onAstroLoad);
     document.addEventListener('astro:after-swap', onAstroLoad);
+    if (document.readyState !== 'loading') setActive();
+    else document.addEventListener('DOMContentLoaded', setActive, { once: true });
   })();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 <style>
-    .columbia-logo-menu {
-      /* Use the same color as text-base-content for the logo */
-      filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(1);
-      /* Set the logo color using mix-blend-mode and currentColor */
-      mix-blend-mode: multiply;
-      color: var(--tw-text-base-content, #1f2937);
-    }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
+  .nav-link:hover {
+    background-color: rgba(255,255,255,0.07);
+  }
+  .nav-link.active {
+    background-color: rgba(255,255,255,0.18);
+  }
+  .sub-link { display: flex; align-items: center; padding: 0.25rem 0 0.25rem 0.5rem; border-radius: 0.5rem; opacity: 0.95; }
+  .sub-link:hover { background-color: rgba(255,255,255,0.06); }
+  .sub-link.active { background-color: rgba(255,255,255,0.1); }
+  /* Rotate caret on open */
+  details[open] .chev { transform: rotate(-180deg); }
+  /* Subtle scrollbar for menu */
+  .menu::-webkit-scrollbar { width: 8px; }
+  .menu::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.2); border-radius: 6px; }
+  .menu::-webkit-scrollbar-track { background: transparent; }
   .highlight-section {
     box-shadow: 0 0 0 4px #2563eb;
     transition: box-shadow 0.3s;
+  }
+  .logo-mask { 
+    display: inline-block; 
+    background-color: currentColor; 
+    -webkit-mask: url('/favicon-crown.png') no-repeat center / contain; 
+    mask: url('/favicon-crown.png') no-repeat center / contain; 
+    opacity: 0.9;
   }
 </style>

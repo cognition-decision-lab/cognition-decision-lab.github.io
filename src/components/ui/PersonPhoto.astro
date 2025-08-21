@@ -15,8 +15,8 @@ const {
   alt,
   className = 'profile-square',
   wrapperClass = '',
-  widths = [160, 320],
-  sizes = '160px',
+  widths = [180, 360],
+  sizes = '180px',
 } = Astro.props as Props
 
 const imgMap = import.meta.glob('/src/assets/**/*.{jpg,jpeg,png}', { eager: true }) as Record<string, { default: any }>
