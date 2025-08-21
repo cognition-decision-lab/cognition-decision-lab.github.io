@@ -68,31 +68,53 @@ const {fullName, title} = profile
     };
 
     const init = () => {
-      const links = document.querySelectorAll('a[href^="/papers#"]');
-      links.forEach((link) => {
-        link.addEventListener(
+      // Delegate clicks for stability across navigations
+      if (!document.__cdlPapersDelegateBound) {
+        document.addEventListener(
           'click',
           (e) => {
-            const href = link.getAttribute('href') || '';
+            const target = e.target instanceof Element ? e.target.closest('a') : null;
+            if (!target) return;
+            const href = target.getAttribute('href') || '';
+            if (!href.startsWith('/papers#')) return;
             const anchor = href.split('#')[1] || '';
-            const inPapers = window.location.pathname.startsWith('/papers');
             e.preventDefault();
+            e.stopPropagation();
+            const inPapers = window.location.pathname.startsWith('/papers');
             if (inPapers) {
               scrollAndOpen(anchor);
               try { history.replaceState(null, '', href); } catch {}
             } else {
-              // Force navigation; on arrival, on-load handlers will scroll and reopen submenu
-              location.href = href;
+              // Client-side navigate to /papers, then scroll on arrival
+              try { sessionStorage.setItem('cdl-papers-anchor', anchor); } catch {}
+              const a = document.createElement('a');
+              a.href = '/papers';
+              a.style.display = 'none';
+              document.body.appendChild(a);
+              a.click();
+              setTimeout(() => a.remove(), 0);
             }
           },
           { passive: false }
         );
-      });
+        document.__cdlPapersDelegateBound = true;
+      }
 
-      // If landing on /papers with a hash, scroll and keep submenu open
-      const anchor = window.location.hash ? window.location.hash.slice(1) : '';
-      if (anchor && window.location.pathname.startsWith('/papers')) {
-        requestAnimationFrame(() => scrollAndOpen(anchor));
+      // If landing on /papers, scroll to hash or stored anchor and keep submenu open
+      if (window.location.pathname.startsWith('/papers')) {
+        let anchor = window.location.hash ? window.location.hash.slice(1) : '';
+        if (!anchor) {
+          try {
+            anchor = sessionStorage.getItem('cdl-papers-anchor') || '';
+            if (anchor) {
+              sessionStorage.removeItem('cdl-papers-anchor');
+              try { history.replaceState(null, '', `/papers#${anchor}`); } catch {}
+            }
+          } catch {}
+        }
+        if (anchor) {
+          requestAnimationFrame(() => requestAnimationFrame(() => scrollAndOpen(anchor)));
+        }
       }
     };
 
@@ -101,10 +123,7 @@ const {fullName, title} = profile
 
     // Handle Astro client-side navigations as well
     const onAstroLoad = () => {
-      const anchor = window.location.hash ? window.location.hash.slice(1) : '';
-      if (anchor && window.location.pathname.startsWith('/papers')) {
-        requestAnimationFrame(() => scrollAndOpen(anchor));
-      }
+      init();
     };
 
     document.addEventListener('astro:page-load', onAstroLoad);
