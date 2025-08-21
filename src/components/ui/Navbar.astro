@@ -70,6 +70,30 @@ const {fullName, title} = profile
     const init = () => {
       // Delegate clicks for stability across navigations
       if (!document.__cdlPapersDelegateBound) {
+        const shouldHandle = (evt) => {
+          if (!(evt.target instanceof Element)) return { ok: false };
+          const a = evt.target.closest('a');
+          if (!a) return { ok: false };
+          const href = a.getAttribute('href') || '';
+          if (!href.startsWith('/papers#')) return { ok: false };
+          // Respect new-tab/middle-click and modifier keys
+          const mouse = evt;
+          const isModified = !!(mouse.metaKey || mouse.ctrlKey || mouse.shiftKey || mouse.altKey);
+          const isMiddle = (mouse.button !== undefined && mouse.button === 1);
+          if (isModified || isMiddle) return { ok: false };
+          const anchor = href.split('#')[1] || '';
+          return { ok: true, anchor, href, a };
+        };
+
+        // Early interception to prevent ClientRouter from kicking in
+        const preempt = (e) => {
+          const res = shouldHandle(e);
+          if (!res.ok) return;
+          try { e.preventDefault(); } catch {}
+          try { e.stopImmediatePropagation(); } catch {}
+          try { e.stopPropagation(); } catch {}
+        };
+
         const handler = (e) => {
           const target = e.target instanceof Element ? e.target.closest('a') : null;
           if (!target) return;
@@ -96,6 +120,7 @@ const {fullName, title} = profile
           }
         };
         // Capture-phase to run before ClientRouter handlers
+        document.addEventListener('pointerdown', preempt, { passive: false, capture: true });
         document.addEventListener('click', handler, { passive: false, capture: true });
         document.__cdlPapersDelegateBound = true;
       }

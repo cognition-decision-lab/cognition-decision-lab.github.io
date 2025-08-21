@@ -4,9 +4,8 @@ export const profile = {
 	institute: 'Columbia University',
 	author_name: 'Woodford, Dean, Afrouzi',
 	research_areas: [
-		{ title: 'Economic Decision Making', description: 'Understanding cognitive processes in economic choices', field: 'economics' },
-		{ title: 'Limited Attention', description: 'Studying allocation of attention during choice', field: 'psychology' },
-		{ title: 'Incomplete Preferences', description: 'Role of incomplete preferences in decision making', field: 'economics' },
+		{ title: 'Economic Decision Making', description: 'Understanding how cognitive processes shape economic choices', field: 'economics' },
+		{ title: 'Limited Attention', description: 'Studying allocation of attention', field: 'psychology' },
 	],
 }
 
