@@ -70,33 +70,33 @@ const {fullName, title} = profile
     const init = () => {
       // Delegate clicks for stability across navigations
       if (!document.__cdlPapersDelegateBound) {
-        document.addEventListener(
-          'click',
-          (e) => {
-            const target = e.target instanceof Element ? e.target.closest('a') : null;
-            if (!target) return;
-            const href = target.getAttribute('href') || '';
-            if (!href.startsWith('/papers#')) return;
-            const anchor = href.split('#')[1] || '';
-            e.preventDefault();
-            e.stopPropagation();
-            const inPapers = window.location.pathname.startsWith('/papers');
-            if (inPapers) {
-              scrollAndOpen(anchor);
-              try { history.replaceState(null, '', href); } catch {}
-            } else {
-              // Client-side navigate to /papers, then scroll on arrival
-              try { sessionStorage.setItem('cdl-papers-anchor', anchor); } catch {}
-              const a = document.createElement('a');
-              a.href = '/papers';
-              a.style.display = 'none';
-              document.body.appendChild(a);
-              a.click();
-              setTimeout(() => a.remove(), 0);
-            }
-          },
-          { passive: false }
-        );
+        const handler = (e) => {
+          const target = e.target instanceof Element ? e.target.closest('a') : null;
+          if (!target) return;
+          const href = target.getAttribute('href') || '';
+          if (!href.startsWith('/papers#')) return;
+          const anchor = href.split('#')[1] || '';
+          // Intercept before Astro's router (capture) and block others
+          try { e.preventDefault(); } catch {}
+          try { e.stopImmediatePropagation(); } catch {}
+          try { e.stopPropagation(); } catch {}
+          const inPapers = window.location.pathname.startsWith('/papers');
+          if (inPapers) {
+            scrollAndOpen(anchor);
+            try { history.replaceState(null, '', href); } catch {}
+          } else {
+            // Client-side navigate to /papers, then scroll on arrival
+            try { sessionStorage.setItem('cdl-papers-anchor', anchor); } catch {}
+            const a = document.createElement('a');
+            a.href = '/papers';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => a.remove(), 0);
+          }
+        };
+        // Capture-phase to run before ClientRouter handlers
+        document.addEventListener('click', handler, { passive: false, capture: true });
         document.__cdlPapersDelegateBound = true;
       }
 
@@ -115,14 +115,14 @@ const {fullName, title} = profile
         if (anchor) {
           // Retry a few times to outlast any router scroll-to-top
           let attempts = 0;
-          const max = 6;
+          const max = 12; // ~600ms with 50ms steps
           const tryScroll = () => {
             attempts++;
             scrollAndOpen(anchor);
             if (attempts < max) setTimeout(tryScroll, 50);
           };
-          // Allow layout to settle then start retries
-          requestAnimationFrame(() => setTimeout(tryScroll, 0));
+          // Allow layout to settle using two rAFs, then start retries
+          requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(tryScroll, 0)));
         }
       }
     };
