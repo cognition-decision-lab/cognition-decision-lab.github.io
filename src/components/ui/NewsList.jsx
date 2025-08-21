@@ -16,9 +16,10 @@ export default function NewsList() {
       <ul
         className="news-list"
         style={{
-          maxHeight: '300px',
+          maxHeight: 'var(--news-max-height, 300px)',
           overflowY: 'auto',
           paddingRight: '8px',
+          margin: 0,
         }}
       >
         {newsItems.map((item, idx) => (

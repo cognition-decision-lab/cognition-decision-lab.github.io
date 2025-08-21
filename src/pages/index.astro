@@ -16,7 +16,7 @@ const { fullName, title, institute, research_areas } = profile
 <Layout>
 
 	<!-- Hero Section -->
-	<section class='flex items-center gap-12 pb-0'>
+	<section class='flex items-center gap-12 pb-2'>
 		<Hero
 			fullName={fullName}
 			title={title}
@@ -25,8 +25,8 @@ const { fullName, title, institute, research_areas } = profile
 	</section>
 
 	<!-- Main Content and News Side-by-Side -->
-	<section class='flex flex-col md:flex-row items-stretch gap-8 border-b py-12'>
-			<div class='flex-1 text-left'>
+	<section class='grid grid-cols-1 md:grid-cols-12 gap-8 border-b py-10 items-stretch min-h-0'>
+			<div id="aboutCol" class='md:col-span-8 text-left h-full flex flex-col min-h-0'>
 					<!-- About Section -->
 					<div class='about-section'>
 						<h2 class='text-2xl font-bold mb-4'>About</h2>
@@ -38,32 +38,23 @@ const { fullName, title, institute, research_areas } = profile
 										The lab's aim is to use tools and techniques from Economics, Neuroscience, and Psychology to better understand the cognitive processes underlying economic decision making. Current projects include studying the way in which limited attention is allocated during choice and understanding the role of incomplete preferences in economic decision making. For more information, please contact one of the principal investigators.
 									</p>
 					</div>
-
-					<!-- Announcements Section -->
-							<div class='about-section mt-8' style="text-align: left;">
-								<h2 class='text-2xl font-bold mb-4'>Announcements</h2>
-								<ul>
-									<li style="text-align: justify;">
-										<strong>Summer 2025:</strong> The lab is excited to have a new postdoctoral researcher in IAB. Jiang Mao joins us from U Penn, where she completed her PhD dissertation on computational models of vision under Alan Stocker. Welcome Jiang!
-									</li>
-								</ul>
-							</div>
+										<!-- (Announcements removed) -->
+										<div class='mt-8'>
+											<img src='/group-photo.avif' alt='Lab Group Photo' class='w-full rounded-2xl shadow-xl' />
+										</div>
 			</div>
-	<aside class='md:w-1/3 w-full text-left shrink-0'>
+	<aside id="newsAside" class='md:col-span-4 w-full text-left md:self-stretch md:sticky md:top-28 md:h-full min-h-0'>
 			<!-- Latest News Section -->
-			<div class='bg-base-200 text-base-content rounded-lg p-6 shadow flex flex-col h-full'>
-				<h2 class='text-2xl font-bold mb-4'>Latest News</h2>
-				<div class="min-h-0 flex-1 overflow-y-auto">
+			<div id="newsCard" class='bg-base-200 text-base-content rounded-2xl p-6 shadow-xl flex flex-col h-full min-h-0'>
+				<h2 class='text-2xl font-bold mb-3'>Latest News</h2>
+				<div id="newsScroller" class="min-h-0 flex-1 pr-1">
 					<NewsList />
 				</div>
 			</div>
 		</aside>
 	</section>
 
-	<!-- Lab Image -->
-	<section class='py-12 border-b'>
-		<img src='/group-photo.avif' alt='Lab Group Photo' class='w-full rounded shadow' />
-	</section>
+	<!-- Lab Image moved into About section above -->
 
 
 <style>
@@ -72,5 +63,65 @@ const { fullName, title, institute, research_areas } = profile
 		text-decoration: underline;
 	}
 </style>
+
+<script>
+	(function () {
+		const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+		const px = (n) => `${Math.round(n)}px`;
+			function adjustNewsHeight() {
+			const about = document.getElementById('aboutCol');
+			const aside = document.getElementById('newsAside');
+			const card = document.getElementById('newsCard');
+			const scroller = document.getElementById('newsScroller');
+			if (!about || !aside || !card || !scroller) return;
+
+				// Only equalize on md+ screens; reset on small screens
+				const isMdUp = window.matchMedia('(min-width: 768px)').matches;
+				if (!isMdUp) {
+					card.style.removeProperty('height');
+					scroller.style.removeProperty('--news-max-height');
+					return;
+				}
+
+			// heights: match About+photo exactly
+			const aboutH = about.getBoundingClientRect().height;
+			const targetH = Math.max(aboutH, 200); // sensible minimum
+			card.style.height = px(targetH);
+
+			// Compute inner scroller max height: card - paddings - header
+			const cs = getComputedStyle(card);
+			const padY = (parseFloat(cs.paddingTop) || 0) + (parseFloat(cs.paddingBottom) || 0);
+			const header = card.querySelector('h2');
+			const headerH = header ? header.offsetHeight : 0;
+			const innerMax = clamp(targetH - padY - headerH, 120, 9999);
+			// Provide the height to the inner UL via CSS variable; avoid nested scrollbars
+			scroller.style.setProperty('--news-max-height', px(innerMax));
+			scroller.style.removeProperty('max-height');
+			scroller.style.removeProperty('overflow-y');
+		}
+
+		const run = () => requestAnimationFrame(() => adjustNewsHeight());
+			if (document.readyState !== 'loading') run();
+			else document.addEventListener('DOMContentLoaded', run, { once: true });
+			window.addEventListener('load', run, { once: true });
+			// Recalc when the lab photo loads
+				const photo = document.querySelector('img[alt="Lab Group Photo"]');
+			if (photo) {
+				if (photo.complete) run(); else photo.addEventListener('load', run, { once: true });
+			}
+
+				// Observe About column for height changes (fonts, content, image)
+				if ('ResizeObserver' in window) {
+					const about = document.getElementById('aboutCol');
+					if (about) {
+						const ro = new ResizeObserver(() => run());
+						ro.observe(about);
+					}
+				}
+		window.addEventListener('resize', run);
+		document.addEventListener('astro:page-load', run);
+		document.addEventListener('astro:after-swap', run);
+	})();
+</script>
 
 </Layout>
