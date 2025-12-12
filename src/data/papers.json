@@ -1,5 +1,45 @@
 [
   {
+  "title": "Recovering Preferences from Mistakes: An Auxiliary Task Approach",
+  "authors": ["Hanyao Zhang"],
+  "date": "November 2025",
+  "type": "working",
+  "section": "economic-decision-making",
+  "url": "https://hanyaozhang.com/files/mistakes.pdf"
+  },
+  {
+  "title": "Calculations Behind Lottery Valuations",
+  "authors": ["Hanyao Zhang"],
+  "date": "November 2025",
+  "type": "working",
+  "section": "economic-decision-making",
+  "url": "https://hanyaozhang.com/files/cblv.pdf"
+  },
+  {
+  "title": "Climated Maladaptation and the Commons: Groundwater Management in India",
+  "authors": ["Nikhil Basavappa", "Ricardo Pommer Muñoz"],
+  "date": "December 2025",
+  "type": "working",
+  "section": "other",
+  "url": "https://www.dropbox.com/scl/fi/rw4rle2fpq48ogex87mpy/nbrpm_gw_draft_public.pdf?rlkey=1ozzl00h7dixyy739igt94az3&dl=0"
+  },
+  {
+  "title": "Information Frictions and the Market for Climate Adaptation: Evidence from Index Insurance in Colombia",
+  "authors": ["Ricardo Pommer Muñoz"],
+  "date": "November 2025",
+  "type": "working",
+  "section": "behavioral-economic-links",
+  "url": "https://www.dropbox.com/scl/fi/ouxaflaebsar91t1s1b79/rpm_jmp_live.pdf?rlkey=r9yoevzo9hadq1ob1hho0tsyu&raw=1"
+  },
+  {
+  "title": "To Each Their Own: Heterogeneity in Worker Preferences for Peer Information",
+  "authors": ["Zhi Hao Lim"],
+  "date": "August 2025",
+  "type": "working",
+  "section": "other",
+  "url": "https://arxiv.org/pdf/2508.06162"
+  },
+  {
   "title": "Optimally Imprecise Memory and Biased Forecasts",
   "authors": ["Azeredo da Silveira", "Rava", "Yeji Sung", "Michael Woodford"],
   "journal": "American Economic Review",
