@@ -83,6 +83,12 @@
       "image": "/students/andrew_souther.jpg",
       "title": "PhD Candidate, Economics",
       "email": "ads2286@columbia.edu"
+    },
+    {
+      "name": "Jack Johnson",
+      "image": "/students/jack_johnson.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "jfj2125@columbia.edu"
     }
   ],
   "alumni": {
