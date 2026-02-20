@@ -79,22 +79,34 @@
       "email": "hanyao.zhang@columbia.edu"
     },
     {
-      "name": "Andrew Souther",
-      "image": "/students/andrew_souther.jpg",
-      "title": "PhD Candidate, Economics",
-      "email": "ads2286@columbia.edu"
-    },
-    {
       "name": "Jack Johnson",
       "image": "/students/jack_johnson.jpg",
       "title": "PhD Candidate, Economics",
       "email": "jfj2125@columbia.edu"
     },
     {
+      "name": "Tara Kuruvila",
+      "image": "/students/tara_kuruvila.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "tk3039@columbia.edu"
+    },
+    {
+      "name": "Andrew Souther",
+      "image": "/students/andrew_souther.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "ads2286@columbia.edu"
+    },
+    {
       "name": "Bowen You",
       "image": "/students/bowen_you.jpg",
       "title": "PhD Candidate, Economics",
       "email": "by2392@columbia.edu"
+    },
+    {
+      "name": "Maxim Ventura",
+      "image": "/students/maxim_ventura.jpg",
+      "title": "PhD Candidate, Economics",
+      "email": "mv3010@columbia.edu"
     }
   ],
   "alumni": {
