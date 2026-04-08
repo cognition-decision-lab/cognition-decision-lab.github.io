@@ -62,7 +62,11 @@ for (const p of [
             <PersonPhoto path={student.image} alt={student.name} wrapperClass="mb-4 mx-auto" />
             <h3 class="text-lg font-semibold">{student.name}</h3>
             <p>{student.title}</p>
-            <a href={`mailto:${student.email}`} class="text-blue-600 underline mt-2">{student.email}</a>
+            <div class="mt-2 flex flex-col gap-1">
+              {student.website && <a href={student.website} class="text-blue-600 underline">Website</a>}
+              {student.linkedin && <a href={student.linkedin} class="text-blue-600 underline">LinkedIn</a>}
+              <a href={`mailto:${student.email}`} class="text-blue-600 underline mt-2">{student.email}</a>
+            </div>
           </div>
         ))}
       </div>

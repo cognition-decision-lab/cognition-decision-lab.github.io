@@ -27,14 +27,6 @@
   ],
   "researchers": [
     {
-      "name": "Giulia Mezzadri",
-      "image": "/researchers/giulia_mezzadri.jpg",
-      "title": "Post Doctoral Research Scholar",
-      "website": "http://www.giuliamezzadri.com/",
-      "linkedin": "https://www.linkedin.com/in/giulia-mezzadri/",
-      "email": "gm3026@columbia.edu"
-    },
-    {
       "name": "Jiang Mao",
       "image": "/researchers/jiang_mao.jpg",
       "title": "Post Doctoral Research Scholar",
@@ -64,6 +56,7 @@
       "name": "Zhi Hao Lim",
       "image": "/students/zhi_hao_lim.jpg",
       "title": "PhD Candidate, Economics",
+      "website": "https://zhihao-lim.github.io/",
       "email": "zl2969@columbia.edu"
     },
     {
@@ -111,6 +104,7 @@
   ],
   "alumni": {
     "postdocs": [
+      "Giulia Mezzadri – Post Doctoral Fellow at École normale supérieure Paris-Saclay",
       "Arthur Prat-Carrabin – Post Doctoral Fellow at Harvard University",
       "Brandon Ashinoff – Data Scientist at Tetricus Labs",
       "Mel Win Khaw – Post Doctoral Fellow at Duke University"
