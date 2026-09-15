@@ -2,10 +2,18 @@
   {
   "title": "Recovering Preferences from Mistakes: An Auxiliary Task Approach",
   "authors": ["Hanyao Zhang"],
-  "date": "November 2025",
+  "date": "September 2026",
   "type": "working",
   "section": "economic-decision-making",
   "url": "https://hanyaozhang.com/files/mistakes.pdf"
+  },
+  {
+  "title": "Is Complexity the Problem? Testing Random Choice with Heterogeneity",
+  "authors": ["Shuhua Si"],
+  "date": "May 2026",
+  "type": "working",
+  "section": "economic-decision-making",
+  "url": "https://arxiv.org/abs/2605.01850"
   },
   {
   "title": "Calculations Behind Lottery Valuations",
@@ -38,6 +46,16 @@
   "type": "working",
   "section": "other",
   "url": "https://arxiv.org/pdf/2508.06162"
+  },
+  {
+  "title": "Behavioral Signatures of Cognitive Noise",
+  "authors": ["Ryan Oprea", "Michael Woodford"],
+  "journal": "Annual Review of Economics",
+  "volume": "19",
+  "date": "forthcoming",
+  "type": "published",
+  "section": "economic-decision-making",
+  "url": "/papers/oprea-woodford-behavioral-signatures-of-cognitive-noise.pdf"
   },
   {
   "title": "Sources of Imprecision in Integrated Value Comparisons",

@@ -66,18 +66,6 @@
       "email": "tl3078@columbia.edu"
     },
     {
-      "name": "Ricardo Pommer",
-      "image": "/students/ricardo_pommer.jpg",
-      "title": "PhD Candidate, Economics",
-      "email": "rap2194@columbia.edu"
-    },
-    {
-      "name": "Shuhua Si",
-      "image": "/students/shuhua_si.jpg",
-      "title": "PhD candidate, Economics",
-      "email": "ss5580@columbia.edu"
-    },
-    {
       "name": "Andrew Souther",
       "image": "/students/andrew_souther.jpg",
       "title": "PhD Candidate, Economics",
@@ -94,12 +82,6 @@
       "image": "/students/bowen_you.jpg",
       "title": "PhD Candidate, Economics",
       "email": "by2392@columbia.edu"
-    },
-    {
-      "name": "Hanyao Zhang",
-      "image": "/students/hanyao_zhang.jpg",
-      "title": "PhD Candidate, Economics",
-      "email": "hanyao.zhang@columbia.edu"
     }
   ],
   "alumni": {
@@ -110,6 +92,9 @@
       "Mel Win Khaw – Post Doctoral Fellow at Duke University"
     ],
     "phds": [
+      "Ricardo Pommer Muñoz – 2026 Ph.D. in Economics. Placement: Analysis Group",
+      "Shuhua Si – 2026 Ph.D. in Economics. Placement: Google",
+      "Hanyao Zhang – 2026 Ph.D. in Economics. Placement: Google",
       "Lucas de Lara – 2025 Ph.D. in Economics. Placement: Assistant Professor, SUNY Binghamton",
       "Edward Peter Shore – 2024 Ph.D. in Economics. Placement: Assistant Professor, University of New South Wales",
       "Susannah Scanlan – 2024 Ph.D. in Economics. Placement: Capital Fund Management",
