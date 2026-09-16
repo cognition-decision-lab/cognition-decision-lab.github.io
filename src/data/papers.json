@@ -16,6 +16,14 @@
   "url": "https://arxiv.org/abs/2605.01850"
   },
   {
+  "title": "Reference Points as Information",
+  "authors": ["Mark Dean", "Benjamin Enke", "Thomas Graeber", "Pietro Ortoleva"],
+  "date": "March 2026",
+  "type": "working",
+  "section": "economic-decision-making",
+  "url": "https://www.columbia.edu/~md3405/working_paper_26.pdf"
+  },
+  {
   "title": "Calculations Behind Lottery Valuations",
   "authors": ["Hanyao Zhang"],
   "date": "November 2025",
@@ -61,7 +69,9 @@
   "title": "Sources of Imprecision in Integrated Value Comparisons",
   "authors": ["Giulia Mezzadri", "Michael Woodford"],
   "journal": "Cognition",
-  "date": "forthcoming",
+  "volume": "275",
+  "pages": "106619",
+  "date": "October 2026",
   "type": "published",
   "section": "economic-decision-making",
   "url": "/papers/mezzadri-woodford-sources-of-imprecision.pdf"
@@ -91,7 +101,10 @@
   "title": "Experimental Tests of Rational Inattention",
   "authors": ["Mark Dean", "Nathaniel Neligh"],
   "journal": "Journal of Political Economy",
-  "date": "forthcoming",
+  "volume": "131",
+  "issue": "12",
+  "pages": "3415-3461",
+  "date": "December 2023",
   "type": "published",
   "section": "economic-decision-making",
   "url": "http://www.columbia.edu/~md3405/Working_Paper_21.pdf"
@@ -126,22 +139,13 @@
   "url": "https://www.journals.uchicago.edu/doi/10.1086/719276"
   },
   {
-  "title": "Cognitive Imprecision and Small-Stakes Risk Aversion",
-  "authors": ["Mel Win Khaw", "Ziang Li", "Michael Woodford"],
-  "journal": "Review of Economic Studies",
-  "date": "July 2021",
-  "volume": "88",
-  "issue": "4",
-  "pages": "1979-2013",
-  "type": "published",
-  "section": "economic-decision-making",
-  "url": "https://academic.oup.com/restud/article/88/4/1979/5880002"
-  },
-  {
   "title": "Outlier Blindness: A Neurobiological Foundation for Neglect of Financial Risk",
   "authors": ["Elise Payzan-LeNestour", "Michael Woodford"],
   "journal": "Journal of Financial Economics",
-  "date": "forthcoming",
+  "volume": "143",
+  "issue": "3",
+  "pages": "1316-1343",
+  "date": "March 2022",
   "type": "published",
   "section": "economic-decision-making",
   "url": "https://blogs.cuit.columbia.edu/mw2230/files/2021/05/Payzan-Woodford-JFE-forthcoming.pdf"
@@ -159,6 +163,18 @@
   "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20200154"
   },
   {
+  "title": "Cognitive Imprecision and Small-Stakes Risk Aversion",
+  "authors": ["Mel Win Khaw", "Ziang Li", "Michael Woodford"],
+  "journal": "Review of Economic Studies",
+  "date": "July 2021",
+  "volume": "88",
+  "issue": "4",
+  "pages": "1979-2013",
+  "type": "published",
+  "section": "economic-decision-making",
+  "url": "https://academic.oup.com/restud/article/88/4/1979/5880002"
+  },
+  {
   "title": "Individual Differences in the Perception of Probability",
   "authors": ["Mel Win Khaw", "Luminita Stevens", "Michael Woodford"],
   "journal": "PLOS Computational Biology",
@@ -169,6 +185,17 @@
   "type": "published",
   "section": "economic-decision-making",
   "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008871"
+  },
+  {
+  "title": "Endogenous Quantal Response Equilibrium",
+  "authors": ["Evan Friedman"],
+  "journal": "Games and Economic Behavior",
+  "date": "November 2020",
+  "volume": "124",
+  "pages": "620-643",
+  "type": "published",
+  "section": "economic-decision-making",
+  "url": "https://www.dropbox.com/s/9xpyrux2hnvq8rz/EQRE.pdf?dl=0"
   },
   {
   "title": "Estimating Information Cost Functions in Models of Rational Inattention",
@@ -193,15 +220,16 @@
   "url": "https://blogs.cuit.columbia.edu/mw2230/files/2021/05/Woodford-Ann-Rev-Econ-2020.pdf"
   },
   {
-  "title": "Endogenous Quantal Response Equilibrium",
-  "authors": ["Evan Friedman"],
-  "journal": "Games and Economic Behavior",
-  "date": "November 2020",
-  "volume": "124",
-  "pages": "620-643",
+  "title": "Rational Inattention, Optimal Consideration Sets and Stochastic Choice",
+  "authors": ["Andrew Caplin", "Mark Dean", "John Leahy"],
+  "journal": "Review of Economic Studies",
+  "date": "May 2019",
+  "volume": "86",
+  "issue": "3",
+  "pages": "1061-1094",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "https://www.dropbox.com/s/9xpyrux2hnvq8rz/EQRE.pdf?dl=0"
+  "url": "https://academic.oup.com/restud/article-abstract/86/3/1061/5060717"
   },
   {
   "title": "Diverse Motives for Human Curiosity",
@@ -213,18 +241,6 @@
   "type": "published",
   "section": "economic-decision-making",
   "url": "https://www.nature.com/articles/s41562-019-0589-3"
-  },
-  {
-  "title": "Rational Inattention, Optimal Consideration Sets and Stochastic Choice",
-  "authors": ["Andrew Caplin", "Mark Dean", "John Leahy"],
-  "journal": "Review of Economic Studies",
-  "date": "May 2019",
-  "volume": "86",
-  "issue": "3",
-  "pages": "1061-1094",
-  "type": "published",
-  "section": "economic-decision-making",
-  "url": "https://academic.oup.com/restud/article-abstract/86/3/1061/5060717"
   },
   {
   "title": "Temporal Discounting and Search Habits: Evidence for a Task-Dependent Relationship",
@@ -639,22 +655,37 @@
   "url": "http://www.columbia.edu/~md3405/Pub_Paper_2.pdf"
   },
   {
+  "title": "Testing for spillovers in resource conservation: Evidence from a natural field experiment",
+  "authors": ["Lorenz Goette", "Zhi Hao Lim"],
+  "journal": "Journal of Environmental Economics and Management",
+  "volume": "140",
+  "date": "September 2026",
+  "type": "published",
+  "section": "other",
+  "url": "https://www.sciencedirect.com/science/article/pii/S009506962600121X"
+  },
+  {
+  "title": "Endogenous Precision of the Number Sense",
+  "authors": ["Arthur Prat-Carrabin", "Michael Woodford"],
+  "journal": "eLife",
+  "volume": "13",
+  "pages": "RP101277",
+  "date": "September 2024",
+  "type": "published",
+  "section": "other",
+  "url": "https://elifesciences.org/reviewed-preprints/101277"
+  },
+  {
   "title": "The Language of (Non)replicable Social Science",
   "authors": ["Michal Herzenstein", "Sanjana Rosario", "Shin Oblander", "Oded Netzer"],
   "journal": "Psychological Science",
-  "date": "forthcoming",
+  "volume": "35",
+  "issue": "9",
+  "pages": "1048-1061",
+  "date": "August 2024",
   "type": "published",
   "section": "other",
   "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4798327"
-  },
-  {
-  "title": "Beyond Unbounded Beliefs: How Preferences and Information Interplay in Social Learning",
-  "authors": ["Navin Kartik", "SangMok Lee", "Tianhao Liu", "Daniel Rappoport"],
-  "journal": "Econometrica",
-  "date": "forthcoming",
-  "type": "published",
-  "section": "other",
-  "url": "https://arxiv.org/pdf/2103.02754"
   },
   {
   "title": "Is It the Message or the Messenger? Examining Movement in Immigration Beliefs",
@@ -669,15 +700,16 @@
   "url": "https://doi.org/10.1086/728365"
   },
   {
-  "title": "Endogenous Precision of the Number Sense",
-  "authors": ["Arthur Prat-Carrabin", "Michael Woodford"],
-  "journal": "eLife",
-  "volume": "13",
-  "pages": "RP101277",
-  "date": "September 2024",
+  "title": "Beyond Unbounded Beliefs: How Preferences and Information Interplay in Social Learning",
+  "authors": ["Navin Kartik", "SangMok Lee", "Tianhao Liu", "Daniel Rappoport"],
+  "journal": "Econometrica",
+  "volume": "92",
+  "issue": "4",
+  "pages": "1033-1062",
+  "date": "2024",
   "type": "published",
   "section": "other",
-  "url": "https://elifesciences.org/reviewed-preprints/101277"
+  "url": "https://arxiv.org/pdf/2103.02754"
   },
   {
   "title": "Frontiers: Estimating the Long-Term Impact of Major Events on Consumption Patterns: Evidence from COVID-19",
@@ -781,20 +813,20 @@
   "url": "http://www.sciencedirect.com/science/article/pii/S0899825609002164"
   },
   {
-  "title": "Rational Choice Overload",
-  "authors": ["Lucas de Lara", "Mark Dean"],
-  "date": "May 2024",
-  "type": "working",
-  "section": "economic-decision-making",
-  "url": "https://www.columbia.edu/~md3405/Working_Paper_25.pdf"
-  },
-  {
   "title": "Cognitive Imprecision and Stake-Dependent Risk Attitudes",
   "authors": ["Mel Win Khaw", "Ziang Li", "Michael Woodford"],
   "date": "September 2024",
   "type": "working",
   "section": "economic-decision-making",
   "url": "https://www.cognition.econ.columbia.edu/_files/ugd/e1b5f3_345de0d67a5b4f97a6a7b895a8df9bd6.pdf"
+  },
+  {
+  "title": "Rational Choice Overload",
+  "authors": ["Lucas de Lara", "Mark Dean"],
+  "date": "May 2024",
+  "type": "working",
+  "section": "economic-decision-making",
+  "url": "https://www.columbia.edu/~md3405/Working_Paper_25.pdf"
   },
   {
   "title": "Sequential Sampling and Equilibrium​",
@@ -885,20 +917,20 @@
   "url": "http://www.columbia.edu/~mw2230/Random%20Discrete%20Adjustment.pdf"
   },
   {
-  "title": "Macroeconomic Expectations and Cognitive Noise",
-  "authors": ["Yeji Sung"],
-  "date": "December 2022",
-  "type": "working",
-  "section": "bounded-rationality",
-  "url": "https://drive.google.com/file/d/18VFAaK2RnUl8thDe9y6C5YqTIJ1N651a/view"
-  },
-  {
   "title": "What Can Measured Beliefs Tell Us About Monetary Non-Neutrality?",
   "authors": ["Hassan Afrouzi", "Joel P. Flynn", "Choongryul Yang"],
   "date": "June 2024",
   "type": "working",
   "section": "bounded-rationality",
   "url": "https://afrouzi.com/afy_selection.pdf"
+  },
+  {
+  "title": "Macroeconomic Expectations and Cognitive Noise",
+  "authors": ["Yeji Sung"],
+  "date": "December 2022",
+  "type": "working",
+  "section": "bounded-rationality",
+  "url": "https://drive.google.com/file/d/18VFAaK2RnUl8thDe9y6C5YqTIJ1N651a/view"
   },
   {
   "title": "Dynamic Rational Inattention and the Phillips Curve",
