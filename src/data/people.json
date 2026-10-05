@@ -35,6 +35,12 @@
   ],
   "students": [
     {
+      "name": "Thomas Anton",
+      "image": "/students/thomas_anton.jpg",
+      "title": "PhD Student, Economics",
+      "email": "tca2130@columbia.edu"
+    },
+    {
       "name": "Patricio Martin Goldstein",
       "image": "/students/patricio_goldstein.jpg",
       "title": "PhD Candidate, Economics",
