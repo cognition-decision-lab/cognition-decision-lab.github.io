@@ -21,6 +21,13 @@ function byDateDesc(a, b) {
   return (y[0] - x[0]) || (y[1] - x[1]) || (y[2] - x[2])
 }
 const select = (section, type) => papers.filter(p => p.section === section && p.type === type).sort(byDateDesc)
+
+// NOTE: papers.json still records `pages` for most entries, but the citation line
+// deliberately does NOT display it (decision 2026-10-15). The data is kept so it is
+// there if it is ever wanted again. To show it, add back to the <li> below:
+//   {paper.pages ? `, ${/[-\u2010-\u2015]/.test(String(paper.pages)) ? `Pages ${paper.pages}` : `Article ${paper.pages}`}` : ''}
+// (the dash test matters: journals like PNAS and eLife number articles rather than
+// paginating, so "Pages e2407540122" would be wrong)
 ---
 <Layout>
   <style>
@@ -50,7 +57,7 @@ const select = (section, type) => papers.filter(p => p.section === section && p.
                 ) : (
                   `"${paper.title}"`
                 )}
-              </span>, {paper.authors.join(', ')}{paper.journal ? `, ${paper.journal}` : ''}{paper.volume ? `, Volume ${paper.volume}` : ''}{paper.issue ? `, Issue ${paper.issue}` : ''}{paper.pages ? `, Pages ${paper.pages}` : ''}{paper.date ? `, ${paper.date}` : ''}
+              </span>, {paper.authors.join(', ')}{paper.journal ? `, ${paper.journal}` : ''}{paper.volume ? `, Volume ${paper.volume}` : ''}{paper.issue ? `, Issue ${paper.issue}` : ''}{paper.date ? `, ${paper.date}` : ''}
             </li>
           ))}
         </ul>

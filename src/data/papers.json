@@ -118,7 +118,7 @@
   "date": "October 2026",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "/papers/mezzadri-woodford-sources-of-imprecision.pdf"
+  "url": "https://doi.org/10.1016/j.cognition.2026.106619"
   },
   {
   "title": "The Status Quo and Belief Polarization of Inattentive Agents: Theory and Experiment",
@@ -134,7 +134,7 @@
   },
   {
   "title": "Optimally Imprecise Memory and Biased Forecasts",
-  "authors": ["Azeredo da Silveira", "Rava", "Yeji Sung", "Michael Woodford"],
+  "authors": ["Rava Azeredo da Silveira", "Yeji Sung", "Michael Woodford"],
   "journal": "American Economic Review",
   "volume": "114",
   "issue": "10",
@@ -163,7 +163,7 @@
   "date": "December 2023",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~md3405/Working_Paper_21.pdf"
+  "url": "https://doi.org/10.1086/725174"
   },
   {
   "title": "Rational Inattention when Decisions Take Time",
@@ -207,7 +207,7 @@
   "date": "March 2022",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "https://blogs.cuit.columbia.edu/mw2230/files/2021/05/Payzan-Woodford-JFE-forthcoming.pdf"
+  "url": "https://doi.org/10.1016/j.jfineco.2021.06.019"
   },
   {
   "title": "Neighborhood-Based Information Costs",
@@ -254,7 +254,7 @@
   "pages": "620-643",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "https://www.dropbox.com/s/9xpyrux2hnvq8rz/EQRE.pdf?dl=0"
+  "url": "https://doi.org/10.1016/j.geb.2020.10.003"
   },
   {
   "title": "Estimating Information Cost Functions in Models of Rational Inattention",
@@ -262,7 +262,7 @@
   "journal": "Journal of Economic Theory",
   "date": "May 2020",
   "volume": "187",
-  "pages": "Article No. 105011",
+  "pages": "105011",
   "type": "published",
   "section": "economic-decision-making",
   "url": "https://www.sciencedirect.com/science/article/pii/S002205311830396X"
@@ -276,7 +276,7 @@
   "pages": "579-601",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "https://blogs.cuit.columbia.edu/mw2230/files/2021/05/Woodford-Ann-Rev-Econ-2020.pdf"
+  "url": "https://doi.org/10.1146/annurev-economics-102819-040518"
   },
   {
   "title": "Rational Inattention, Optimal Consideration Sets and Stochastic Choice",
@@ -307,10 +307,10 @@
   "journal": "Frontiers in Psychology: Decision Neuroscience",
   "date": "November 2018",
   "volume": "9",
-  "pages": "art. 2102",
+  "pages": "2102",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "https://blogs.cuit.columbia.edu/mw2230/files/2021/05/Khaw-Li-Woodford-Frontiers-Psych-2018.pdf"
+  "url": "https://doi.org/10.3389/fpsyg.2018.02102"
   },
   {
   "title": "Discrete Adjustment to a Changing Environment: Experimental Evidence",
@@ -332,7 +332,7 @@
   "pages": "93-127",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~md3405/Working_Paper_14.pdf"
+  "url": "https://doi.org/10.1016/j.jet.2017.01.009"
   },
   {
   "title": "Satisficing and Stochastic Choice",
@@ -343,7 +343,7 @@
   "date": "November 2016",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~md3405/Working_Paper_16.pdf"
+  "url": "https://doi.org/10.1016/j.jet.2016.08.008"
   },
   {
   "title": "Revealed Preference, Rational Inattention and Costly Information Acquisition",
@@ -355,18 +355,18 @@
   "pages": "2183-2203",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~md3405/Pub_Paper_8.pdf"
+  "url": "https://doi.org/10.1257/aer.20140117"
   },
   {
   "title": "Stochastic Choice: An Optimizing Neuroeconomic Model",
   "authors": ["Michael Woodford"],
-  "journal": "The American Economic Review",
+  "journal": "American Economic Review",
   "date": "January 2014",
   "volume": "104.5",
   "pages": "495-500",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~mw2230/AEAPPneuro.pdf"
+  "url": "https://doi.org/10.1257/aer.104.5.495"
   },
   {
   "title": "The Price of Flexibility: Towards a Theory of Thinking Aversion",
@@ -383,25 +383,25 @@
   {
   "title": "Prospect Theory as Efficient Perceptual Distortion",
   "authors": ["Michael Woodford"],
-  "journal": "The American Economic Review",
+  "journal": "American Economic Review",
   "date": "May 2012",
   "volume": "102.3",
   "pages": "41-46",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~mw2230/Inattention%20AEAPP.pdf"
+  "url": "https://doi.org/10.1257/aer.102.3.41"
   },
   {
   "title": "Search and Satisficing",
   "authors": ["Andrew Caplin", "Mark Dean", "Daniel Martin"],
-  "journal": "The American Economic Review",
+  "journal": "American Economic Review",
   "date": "December 2011",
   "volume": "101",
   "issue": "7",
   "pages": "2899-2922",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~md3405/Pub_Paper_6.pdf"
+  "url": "https://doi.org/10.1257/aer.101.7.2899"
   },
   {
   "title": "Macroeconomic Expectations and Cognitive Noise",
@@ -466,7 +466,7 @@
   "date": "May 2019",
   "type": "published",
   "section": "bounded-rationality",
-  "url": "https://blogs.cuit.columbia.edu/mw2230/files/2020/09/WoodfordXie_AEAPP.pdf"
+  "url": "https://doi.org/10.1257/pandp.20191084"
   },
   {
   "title": "Are Low Interest Rates Deflationary? A Paradox of Perfect-Foresight Analysis",
@@ -477,7 +477,7 @@
   "date": "January 2019",
   "type": "published",
   "section": "bounded-rationality",
-  "url": "http://blogs.cuit.columbia.edu/mw2230/files/2018/04/GSW_revision_0118.pdf"
+  "url": "https://doi.org/10.1257/aer.20170110"
   },
   {
   "title": "Monetary Policy Analysis when Planning Horizons are Finite",
@@ -488,7 +488,7 @@
   "date": "April 2018",
   "type": "published",
   "section": "bounded-rationality",
-  "url": "https://blogs.cuit.columbia.edu/mw2230/files/2018/04/NBERMA2018.pdf"
+  "url": "https://doi.org/10.1086/700892"
   },
   {
   "title": "Econographics",
@@ -502,7 +502,7 @@
   {
   "title": "The Empirical Relationship Between Nonstandard Economic Behaviors",
   "authors": ["Mark Dean", "Pietro Ortoleva"],
-  "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+  "journal": "Proceedings of the National Academy of Sciences",
   "date": "June 2019",
   "type": "published",
   "section": "behavioral-economic-links",
@@ -530,7 +530,7 @@
   {
   "title": "Representational Geometry Explains Puzzling Error Distributions in Behavioral Tasks",
   "authors": ["Xuexin Wei", "Michael Woodford"],
-  "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+  "journal": "Proceedings of the National Academy of Sciences",
   "volume": "122",
   "issue": "4",
   "pages": "e2407540122",
@@ -542,7 +542,7 @@
   {
   "title": "Jointly Efficient Encoding and Decoding in Neural Populations",
   "authors": ["Simone Blanco Malerba", "Aurora Micheli", "Michael Woodford", "Rava Azeredo da Silveira"],
-  "journal": "PLoS Comput Biol",
+  "journal": "PLOS Computational Biology",
   "volume": "20",
   "issue": "7",
   "pages": "e1012240",
@@ -602,7 +602,7 @@
   {
   "title": "Multiple Conceptions of Resource Rationality",
   "authors": ["WeiJi Ma", "Michael Woodford"],
-  "journal": "Behavioral and Brain Science",
+  "journal": "Behavioral and Brain Sciences",
   "volume": "43",
   "pages": "e15",
   "date": "March 11, 2020",
@@ -630,7 +630,7 @@
   "date": "October 2015",
   "type": "published",
   "section": "neuroeconomics",
-  "url": "http://www.columbia.edu/~md3405/Working_Paper_15.pdf"
+  "url": "https://doi.org/10.1016/j.cobeha.2015.07.005"
   },
   {
   "title": "What Can Neuroeconomics Tell us About Economic Decision Making?",
@@ -651,7 +651,7 @@
   "date": "October 2010",
   "type": "published",
   "section": "neuroeconomics",
-  "url": "http://www.columbia.edu/~md3405/Working_Paper_1.pdf"
+  "url": "https://doi.org/10.1523/jneurosci.1747-10.2010"
   },
   {
   "title": "Measuring Beliefs and Rewards: A Neuroeconomic Approach",
@@ -663,7 +663,7 @@
   "date": "August 2010",
   "type": "published",
   "section": "neuroeconomics",
-  "url": "http://www.columbia.edu/~md3405/Pub_Paper_4.pdf"
+  "url": "https://doi.org/10.1162/qjec.2010.125.3.923"
   },
   {
   "title": "Axiomatic Methods, Dopamine and Reward Prediction Error",
@@ -675,7 +675,7 @@
   "date": "August 2008",
   "type": "published",
   "section": "neuroeconomics",
-  "url": "http://www.columbia.edu/~md3405/Pub_Paper_3.pdf"
+  "url": "https://doi.org/10.1016/j.conb.2008.07.007"
   },
   {
   "title": "Dopamine, Reward Prediction Error, and Economics",
@@ -687,7 +687,7 @@
   "date": "May 2008",
   "type": "published",
   "section": "neuroeconomics",
-  "url": "http://www.columbia.edu/~md3405/Pub_Paper_2.pdf"
+  "url": "https://doi.org/10.1162/qjec.2008.123.2.663"
   },
   {
   "title": "Testing for spillovers in resource conservation: Evidence from a natural field experiment",
@@ -756,7 +756,7 @@
   "date": "August 2024",
   "type": "published",
   "section": "other",
-  "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4798327"
+  "url": "https://doi.org/10.1177/09567976241254037"
   },
   {
   "title": "Is It the Message or the Messenger? Examining Movement in Immigration Beliefs",
@@ -780,7 +780,7 @@
   "date": "2024",
   "type": "published",
   "section": "other",
-  "url": "https://arxiv.org/pdf/2103.02754"
+  "url": "https://doi.org/10.3982/ecta21470"
   },
   {
   "title": "Frontiers: Estimating the Long-Term Impact of Major Events on Consumption Patterns: Evidence from COVID-19",
@@ -797,7 +797,7 @@
   {
   "title": "Overreaction in Expectations: Evidence and Theory",
   "authors": ["Hassan Afrouzi", "Spencer Y Kwon", "Augustin Landier", "Yueran Ma", "David Thesmar"],
-  "journal": "The Quarterly Journal of Economics",
+  "journal": "Quarterly Journal of Economics",
   "volume": "138",
   "issue": "3",
   "pages": "1713-1764",
@@ -882,7 +882,7 @@
   "pages": "19-48",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~md3405/Pub_Paper_5.pdf"
+  "url": "https://doi.org/10.3982/te592"
   },
   {
   "title": "Information-Constrained State-Dependent Pricing",
@@ -893,7 +893,7 @@
   "pages": "S100-S124",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "http://www.columbia.edu/~mw2230/ICSDP_ME.pdf"
+  "url": "https://doi.org/10.1016/j.jmoneco.2009.06.014"
   },
   {
   "title": "Optimal Evidence Accumulation and Stochastic Choice",
@@ -936,7 +936,7 @@
   "pages": "303-346",
   "type": "published",
   "section": "bounded-rationality",
-  "url": "http://blogs.cuit.columbia.edu/mw2230/files/2017/08/AREcon.pdf"
+  "url": "https://doi.org/10.1146/annurev-economics-080511-110857"
   },
   {
   "title": "Dynamic Rational Inattention and the Phillips Curve",
@@ -967,7 +967,7 @@
   "date": "March 2010",
   "type": "published",
   "section": "bounded-rationality",
-  "url": "http://blogs.cuit.columbia.edu/mw2230/files/2017/08/robust_AER_final.pdf"
+  "url": "https://doi.org/10.1257/aer.100.1.274"
   },
   {
   "title": "Deeper Habits",
@@ -1002,7 +1002,7 @@
   "date": "February 2017",
   "type": "published",
   "section": "other",
-  "url": "http://people.hss.caltech.edu/~magranov/documents/RC_final.pdf"
+  "url": "https://doi.org/10.1086/689774"
   },
   {
   "title": "‘Did You Catch the Game Last Night?’ Peer Group Effects in Sell-Side Analyst Forecasts",
@@ -1038,7 +1038,7 @@
   "date": "March 2015",
   "type": "published",
   "section": "other",
-  "url": "http://ortoleva.mycpanel.princeton.edu/papers/CautiousExpectedUtility.pdf"
+  "url": "https://doi.org/10.3982/ecta11733"
   },
   {
   "title": "Incomplete Preferences under Uncertainty: Indecisiveness in Beliefs vs. Tastes",
@@ -1050,7 +1050,7 @@
   "date": "July 2012",
   "type": "published",
   "section": "other",
-  "url": "http://ortoleva.mycpanel.princeton.edu/papers/OkOrtolevaRiella2012.pdf"
+  "url": "https://doi.org/10.3982/ecta8040"
   },
   {
   "title": "Status Quo Bias, Multiple Priors and Uncertainty Aversion",
