@@ -1,5 +1,40 @@
 [
   {
+  "title": "Information-Constrained Coordination of Economic Behavior",
+  "authors": ["Guy Aridor", "Rava Azeredo da Silveira", "Michael Woodford"],
+  "journal": "Journal of Economic Dynamics and Control",
+  "volume": "172",
+  "pages": "104985",
+  "date": "March 2025",
+  "type": "published",
+  "section": "economic-decision-making",
+  "url": "https://doi.org/10.1016/j.jedc.2024.104985"
+  },
+  {
+  "title": "Individual Risk Attitudes Arise From Noise in Neurocognitive Magnitude Representations",
+  "authors": ["Miguel Barretto-García", "Gilles de Hollander", "Marcus Grueschow", "Rafael Polanía", "Michael Woodford", "Christian C. Ruff"],
+  "journal": "Nature Human Behaviour",
+  "volume": "7",
+  "issue": "9",
+  "pages": "1551-1567",
+  "date": "July 2023",
+  "type": "published",
+  "section": "neuroeconomics",
+  "url": "https://doi.org/10.1038/s41562-023-01643-4"
+  },
+  {
+  "title": "Measuring Rationality with the Minimum Cost of Revealed Preference Violations",
+  "authors": ["Mark Dean", "Daniel Martin"],
+  "journal": "Review of Economics and Statistics",
+  "volume": "98",
+  "issue": "3",
+  "pages": "524-534",
+  "date": "July 2016",
+  "type": "published",
+  "section": "other",
+  "url": "https://doi.org/10.1162/rest_a_00542"
+  },
+  {
   "title": "Recovering Preferences from Mistakes: An Auxiliary Task Approach",
   "authors": ["Hanyao Zhang"],
   "date": "September 2026",
@@ -72,7 +107,7 @@
   "date": "forthcoming",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "https://duartegoncalves.com/papers/Esteban-Casanelles%20Goncalves%202020%2C%20The%20Effect%20of%20Incentives%20on%20Choices%20and%20Beliefs%20in%20Games.pdf"
+  "url": "https://arxiv.org/abs/2304.00412"
   },
   {
   "title": "Sources of Imprecision in Integrated Value Comparisons",
@@ -281,12 +316,12 @@
   "title": "Discrete Adjustment to a Changing Environment: Experimental Evidence",
   "authors": ["Mel Win Khaw", "Luminita Stevens", "Michael Woodford"],
   "journal": "Journal of Monetary Economics",
-  "date": "December 2017",
   "volume": "15",
   "pages": "469-473",
+  "date": "December 2017",
   "type": "published",
   "section": "economic-decision-making",
-  "url": "https://authors.elsevier.com/a/1W1E115DWHbjcj"
+  "url": "https://doi.org/10.1016/j.jmoneco.2017.09.001"
   },
   {
   "title": "Limited Attention and Status Quo Bias",
@@ -477,12 +512,12 @@
   "title": "Allais, Ellsberg and Hedging",
   "authors": ["Mark Dean", "Pietro Ortoleva"],
   "journal": "Theoretical Economics",
-  "date": "January 2017",
   "volume": "12",
   "pages": "377-424",
+  "date": "January 2017",
   "type": "published",
   "section": "behavioral-economic-links",
-  "url": "http://economics.mit.edu/files/8219"
+  "url": "https://econtheory.org/ojs/index.php/te/article/viewArticle/20170377"
   },
   {
   "title": "Willingness to Accept, Willingness to Pay, and Loss Aversion",
@@ -584,7 +619,7 @@
   "date": "January 2019",
   "type": "published",
   "section": "neuroeconomics",
-  "url": "https://www.cognition.econ.columbia.edu/_files/ugd/3482d9_11992017bef7419d9c3b88cbc64dca29.pdf"
+  "url": "https://doi.org/10.1038/s41593-018-0292-0"
   },
   {
   "title": "How can Neuroscience inform Economics?",
@@ -820,7 +855,7 @@
   "date": "September 2024",
   "type": "working",
   "section": "economic-decision-making",
-  "url": "https://www.cognition.econ.columbia.edu/_files/ugd/e1b5f3_345de0d67a5b4f97a6a7b895a8df9bd6.pdf"
+  "url": "https://www.nber.org/papers/w30417"
   },
   {
   "title": "Rational Choice Overload",
@@ -836,7 +871,7 @@
   "date": "November 2022",
   "type": "working",
   "section": "economic-decision-making",
-  "url": "https://duartegoncalves.com/papers/Goncalves%202022%2C%20Sequential%20Sampling%20Equilibrium.pdf"
+  "url": "https://arxiv.org/abs/2212.07725"
   },
   {
   "title": "Search, Choice and Revealed Preference",
@@ -940,7 +975,7 @@
   "date": "November 2018",
   "type": "working",
   "section": "bounded-rationality",
-  "url": "https://www.cognition.econ.columbia.edu/_files/ugd/3482d9_f6f72ccc0686432184714eb215c9090d.pdf"
+  "url": "https://sites.asit.columbia.edu/wp-content/uploads/sites/32/2018/11/JMP.pdf"
   },
   {
   "title": "Adaptive Efficient Coding: A Variational Autoencoder Approach",
@@ -1016,14 +1051,6 @@
   "type": "published",
   "section": "other",
   "url": "http://ortoleva.mycpanel.princeton.edu/papers/OkOrtolevaRiella2012.pdf"
-  },
-  {
-  "title": "Diagonal Games: A Tool for Experiments and Theory",
-  "authors": ["Duarte Gonçalves"],
-  "date": "September 2020",
-  "type": "working",
-  "section": "other",
-  "url": "https://duartegoncalves.com/papers/Goncalves%202020%2C%20Diagonal%20Games.pdf"
   },
   {
   "title": "Status Quo Bias, Multiple Priors and Uncertainty Aversion",
