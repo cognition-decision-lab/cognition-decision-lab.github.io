@@ -1,6 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import papers from '../data/papers.json'
+
+// Papers are rendered newest-first, sorted here rather than relying on the order
+// of papers.json. Accepts "forthcoming", "Month YYYY", "Month D, YYYY" and "YYYY".
+const MONTHS = ['january','february','march','april','may','june','july','august','september','october','november','december']
+function dateKey(raw) {
+  const d = String(raw ?? '').trim()
+  if (d.toLowerCase() === 'forthcoming') return [9999, 12, 31]
+  let m = d.match(/^([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})$/)
+  if (m && MONTHS.includes(m[1].toLowerCase())) return [+m[3], MONTHS.indexOf(m[1].toLowerCase()) + 1, +m[2]]
+  m = d.match(/^([A-Za-z]+)\s+(\d{4})$/)
+  if (m && MONTHS.includes(m[1].toLowerCase())) return [+m[2], MONTHS.indexOf(m[1].toLowerCase()) + 1, 0]
+  m = d.match(/^(\d{4})$/)
+  if (m) return [+m[1], 0, 0]
+  return [0, 0, 0]   // unparseable dates sink to the bottom rather than breaking the build
+}
+function byDateDesc(a, b) {
+  const x = dateKey(a.date), y = dateKey(b.date)
+  return (y[0] - x[0]) || (y[1] - x[1]) || (y[2] - x[2])
+}
+const select = (section, type) => papers.filter(p => p.section === section && p.type === type).sort(byDateDesc)
 ---
 <Layout>
   <style>
@@ -22,7 +42,7 @@ import papers from '../data/papers.json'
       <div class="space-y-8">
         <h2 class="text-2xl font-bold mb-4">Published Papers</h2>
         <ul class="list-disc ml-8 space-y-2">
-          {papers.filter(p => p.section === section && p.type === 'published').map(paper => (
+          {select(section, 'published').map(paper => (
             <li>
               <span class="text-blue-600">
                 {paper.url ? (
@@ -36,7 +56,7 @@ import papers from '../data/papers.json'
         </ul>
         <h2 class="text-2xl font-bold mt-8 mb-4">Working Papers</h2>
         <ul class="list-disc ml-8 space-y-2">
-          {papers.filter(p => p.section === section && p.type === 'working').map(paper => (
+          {select(section, 'working').map(paper => (
             <li>
               <span class="text-blue-600">
                 {paper.url ? (
